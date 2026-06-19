@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Price Compare — Search</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .logos { display: flex; gap: 30px; justify-content: center; margin: 20px 0; }
+    .logos img { height: 80px; width: auto;max-width: 200px; }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Product Price Compare</h1>
+      <div class="logos">
+        <img src="images/flipkart.png" alt="Flipkart logo" loading="lazy">
+        <img src="images/amazon.png" alt="Amazon logo" loading="lazy">
+        <img src="images/croma.png" alt="Croma logo" loading="lazy">
+      </div>
+      <p>Compare prices across Amazon, Flipkart & Croma</p>
+    </header>
+
+    <section class="search-area">
+      <div class="search-box">
+        <input id="searchInput" placeholder="Search for headphones, phone, laptop..." />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div class="controls">
+        <div class="left">
+          <label>Sort:
+            <select id="sortSelect">
+              <option value="relevance">Relevance</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+            </select>
+          </label>
+          <label>Filter:
+            <select id="sourceFilter">
+              <option value="all">All sources</option>
+              <option value="Amazon">Amazon</option>
+              <option value="Flipkart">Flipkart</option>
+              <option value="Croma">Croma</option>
+            </select>
+          </label>
+        </div>
+        <div class="right">
+          <div id="status" class="status">Ready</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="results-grid"></section>
+
+    <footer class="footer">
+      <small>Built with HTML, CSS, JS & Node — RapidAPI optional. Results are best-effort.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
